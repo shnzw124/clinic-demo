@@ -82,7 +82,7 @@ img {
   padding: 133px 0 249px 211px;
 }
 
-.reverse {
+.row-reverse {
   flex-direction: row-reverse;
 }
 
@@ -221,8 +221,11 @@ img {
 
 .news-item {
   border-bottom: 2px solid #E7E7E7;
-  display: flex;
-  justify-content: left;
+  /* display: flex;
+  justify-content: left; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 8fr;
+  /* gap: 30px; */
   margin: 0 66px 19.5px;
   padding-bottom: 18.5px;
 }
@@ -234,6 +237,7 @@ img {
   font-weight: bold;
   line-height: 38px;
   margin-right: 36px;
+
 }
 
 .news-tag {
@@ -264,32 +268,67 @@ img {
 
 /* ACCESS */
 .access {
-  display: flex;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* flex-direction: row-reverse; */
+  /* align-content: flex-start; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 34px;
   margin: 0 auto;
   max-width: 1180px;
   padding: 196px 0 163px;
 }
 
+/* .access-map {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 75%;
+}
+
+.access-map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} */
+
+.access-info {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.access-map {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.copy-right {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+} 
+
 .access-logo {
-  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .access-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 32px;
+  padding-bottom: 32px;
 }
 
 .address {
   font-size: 16px;
   line-height: 38px;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .calendar {
-  width: 533px;
+  width: 100%;
 }
 
 .calendar p {
@@ -340,6 +379,202 @@ img {
 
 .copy-right {
   font-size: 11px;
-  margin-top: 26.5px;
+  /* margin-top: 26.5px; */
   text-align: right;
+}
+
+/* TB */
+@media (max-width: 1024px) {
+
+  /* FIRST VIEW */
+  .fv {
+    background-position: right 27% top 0%;
+  }
+
+  .fv-title {
+    gap: 20px;
+    padding: 250px 0 20px 20px;
+  }
+
+  /* ABOUT */
+  .about {
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 90%;
+    padding-top: 85px;
+  }
+
+  .about-text {
+    text-align: center;
+    padding: 0;
+
+  }
+
+  .about-img {
+    margin: 0 auto;
+  }
+
+  /* CONTENT */
+  .content-list {
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  .content-item {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* NEWS */
+  .news-list {
+    width: 90%;
+  }
+
+  /* ACCESS */
+  .access {
+    /* flex-direction: column; */
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    max-width: 90%;
+    padding: 42px 0;
+  }
+
+  .access-info {
+    grid-column: auto;
+    grid-row: auto;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .access-text p {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .tel {
+    margin: 0 auto;
+  }
+  
+  .access-map {
+    grid-column: auto;
+    grid-row: auto;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 75%;
+  }
+  
+  .copy-right {
+    grid-column: auto;
+    grid-row: auto;
+  } 
+
+  .access-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .copy-right {
+    text-align: center;
+  }
+
+}
+
+/* SP */
+@media (max-width: 414px) {
+
+  /* HEADER */
+  .header {
+    flex-direction: column;
+  }
+
+  .header-logo {
+    margin: 0 auto;
+  }
+
+  .header-info {
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  /* FIRST VIEW */
+  .fv h2 {
+    font-size: 24px;
+    padding: 20px;
+  }
+
+  /* ABOUT */
+  .about h3 {
+    font-size: 24px;
+  }
+
+  .about p {
+    font-size: 12px;
+  }
+
+  /* CONTENT */
+  .content h3 {
+    font-size: 24px;
+  }
+
+  .content p {
+    font-size: 12px;
+  }
+
+  .content-item {
+    width: 100%;
+  }
+
+  .content-item p {
+    margin: 24px 8px 0 8px;
+  }
+
+  /* NEWS */
+  .news-item {
+    margin: 0 15px 19.5px;
+  }
+
+  .news-date {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .news-tag {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .news-text {
+    grid-column: 2 / 10;
+    grid-row: 1 / 5;
+  }
+
+  /* ACCESS */
+  .access-info {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .tel {
+    margin: 0 auto;
+  }
+
+  .calendar {
+    width: 95%;
+  }
+
+  .hours-item {
+    flex-direction: column;
+  }
+
+  .copy-right {
+    text-align: center;
+  }
+
 }
